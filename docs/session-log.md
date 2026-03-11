@@ -265,12 +265,24 @@ Second detailed comparison pass, identifying spacing and content differences:
 12. `c1f0d29` - fix: add Clover Health logo, improve navbar, add export checklist
 13. `87ab8d8` - fix: round 6 QA - match Framer design closely
 14. `8021934` - fix: round 7 QA - tighten spacing and match Framer details
+15. `9c10abf` - docs: update session log with QA rounds 6-7 and steps 18-20
+16. `b6b4919` - chore: add package.json and package-lock.json to gitignore
+17. `bdf8c90` - chore: commit Playwright setup and add QA instructions to CLAUDE.md
+
+## Step 21: Project cleanup and contributor setup
+
+Decided to commit `package.json` and `package-lock.json` (Playwright dependency) so other contributors can reproduce the QA workflow. Updated `CLAUDE.md` with:
+
+- Playwright install instructions (`npm install`, `npx playwright install chromium`)
+- Example screenshot commands for desktop (1440x900) and mobile (375x812) viewports
+- Reference to the full Playwright guide in docs
+
+Also updated the PR description with a QA rounds summary table and remaining differences section.
 
 ## Remaining minor differences
 
 - HIPAA, SOC 2, JCAHO trust badges in footer (need individual SVG exports from Figma)
 - Custom illustration-style icons in Figma vs generic Heroicons (need individual SVG exports)
-- package.json/package-lock.json from Playwright install (not committed)
 
 ## Live URLs
 
