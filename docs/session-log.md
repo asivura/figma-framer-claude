@@ -165,6 +165,25 @@ Used Playwright to screenshot both the Framer original (`intelligent-gecko-26447
 | Responsive | Framer-generated | Tailwind breakpoints |
 | Editable by AI | No (too large, no semantic structure) | Yes |
 
+## Step 16: Figma asset export (Round 3)
+
+The designer exported assets directly from Figma:
+
+- `healthtap-logo.svg` -- HealthTap wordmark logo (white on transparent)
+- `app-store-badge.svg` -- Official App Store download badge
+- `google-play-badge.svg` -- Official Google Play download badge
+
+These replaced the text-based placeholders in the navbar, footer, and download section. The page now uses real brand assets.
+
+## QA Summary
+
+| Round | Issues found | Fixed |
+|---|---|---|
+| 1 | Broken images, wrong card highlight, missing avatars | Renamed assets, styled step 3, added testimonial photos |
+| 2 | Badge styling, button count, grid layout, section backgrounds, testimonial layout | Pill badges, 2-button tech section, 2x2 grid, avatar-above-name layout |
+| 3 | Step progress line, missing connecting indicator | Added horizontal line between step circles |
+| 4 | Text-based logos, placeholder app buttons | Real SVG logo and badge exports from Figma |
+
 ## Commits on the branch
 
 1. `94601b0` - docs: add guide for building pages with Claude Code
@@ -175,16 +194,13 @@ Used Playwright to screenshot both the Framer original (`intelligent-gecko-26447
 6. `4f184b4` - docs: move documentation to docs/ and add README
 7. `13169b9` - docs: add Figma MCP and Playwright guides
 8. `9d59f5a` - fix: round 1 QA - match Framer layout more closely
+9. `7fa294b` - fix: round 2 QA - add step progress line and gitignore
+10. `3f2c0ec` - fix: round 3 QA - use real Figma-exported logo and badges
 
 ## Remaining minor differences
 
-These are acceptable gaps where we lack the exact assets:
-
-- Navbar uses text logos instead of Clover Health/HealthTap logo images (no separate SVGs in export)
-- Footer uses text logo instead of HealthTap logo image
-- No JCAHO accreditation badge image
-- Rewards steps lack a connecting horizontal progress line between circles
-- App store badges are styled buttons instead of official badge images
+- Clover Health logo in navbar is text (no SVG export provided)
+- HIPAA, SOC 2, JCAHO trust badges in footer (not exported from Figma)
 
 ## Live URLs
 
