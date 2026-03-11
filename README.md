@@ -50,6 +50,8 @@ docs/
 
 - **[Playwright Guide](docs/playwright-guide.md)** -- How to use Playwright for visual QA, responsive testing, cross-browser screenshots, interactive element testing, and more. No project setup required.
 
+- **[Figma Export Checklist](docs/figma-export-checklist.md)** -- Exactly which assets a designer needs to export from Figma to achieve a pixel-perfect match. Lists what's done, what's missing, naming conventions, and export tips.
+
 - **[Session Log](docs/session-log.md)** -- Full journal of every step taken during the rebuild, from diagnosing the Framer export through Playwright visual QA. Includes before/after metrics and the asset identification table.
 
 ## Before / After

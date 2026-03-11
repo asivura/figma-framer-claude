@@ -197,10 +197,30 @@ These replaced the text-based placeholders in the navbar, footer, and download s
 9. `7fa294b` - fix: round 2 QA - add step progress line and gitignore
 10. `3f2c0ec` - fix: round 3 QA - use real Figma-exported logo and badges
 
+## Step 17: Clover Health logo and navbar styling (Round 5)
+
+The designer exported the full-page SVG from Figma (`Untitled.svg`, 25MB) and a footer section SVG (`768-1023.svg`, 360KB). From the full-page SVG, extracted the Clover Health logo path data and created `assets/images/clover-health-logo.svg`.
+
+Also updated the navbar to match Figma more closely:
+- Replaced text "Clover Health" with the real SVG logo
+- Phone number restyled as a teal-outlined rounded pill with phone icon
+- "Schedule visit online" button restyled as white pill with teal text and calendar icon
+
+The footer SVG is too large/complex to use directly (it's the entire footer as one image). The HIPAA/SOC 2/JCAHO badges would need to be exported individually from Figma.
+
+## QA Summary
+
+| Round | Issues found | Fixed |
+|---|---|---|
+| 1 | Broken images, wrong card highlight, missing avatars | Renamed assets, styled step 3, added testimonial photos |
+| 2 | Badge styling, button count, grid layout, section backgrounds, testimonial layout | Pill badges, 2-button tech section, 2x2 grid, avatar-above-name layout |
+| 3 | Step progress line, missing connecting indicator | Added horizontal line between step circles |
+| 4 | Text-based logos, placeholder app buttons | Real SVG logo and badge exports from Figma |
+| 5 | Clover Health logo was text, navbar buttons wrong style | Real Clover Health SVG logo, teal pill phone, white pill schedule button |
+
 ## Remaining minor differences
 
-- Clover Health logo in navbar is text (no SVG export provided)
-- HIPAA, SOC 2, JCAHO trust badges in footer (not exported from Figma)
+- HIPAA, SOC 2, JCAHO trust badges in footer (need individual SVG exports from Figma)
 
 ## Live URLs
 
