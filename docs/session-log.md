@@ -208,6 +208,45 @@ Also updated the navbar to match Figma more closely:
 
 The footer SVG is too large/complex to use directly (it's the entire footer as one image). The HIPAA/SOC 2/JCAHO badges would need to be exported individually from Figma.
 
+## Step 18: Figma export checklist and cleanup
+
+Created `docs/figma-export-checklist.md` listing every asset a designer needs to export from Figma, organized by priority:
+- Compliance badges (HIPAA, SOC 2, JCAHO) - last major gap
+- Section icons (7 custom icons) - optional for pixel-perfect match
+- Social icons - optional
+
+Also cleaned up stale root-level doc files (already moved to `docs/`), updated README with reference to the checklist, and updated PR description on the upstream repo.
+
+## Step 19: Comprehensive visual QA - Round 6
+
+Used a Playwright subagent to take side-by-side screenshots at 12 scroll positions across both pages. Identified and fixed 12 major differences:
+
+1. **Sticky navbar** - Made navbar fixed to top on scroll
+2. **Button icons** - Added phone/calendar icons to all CTA buttons throughout
+3. **Heading colors** - Changed to gold for "Earn $150", Testimonials, Schedule CTA, FAQ headings
+4. **Card borders** - Added to LiveHealthy Visit features, Trusted Care grid, testimonials
+5. **Multi-color icons** - Pink for medications, emerald for lab work, gold for schedule/care
+6. **Star rating color** - Changed from yellow to teal/primary
+7. **"Not sure about tech"** - Restyled as white bordered card instead of dark teal button
+8. **CTA banner buttons** - Both outline style with icons (matching Framer)
+9. **FAQ icons** - Teal circular expand/collapse buttons
+10. **FAQ first item** - Auto-expanded on page load
+11. **FAQ count** - Reduced to match Framer (removed extra items)
+12. **Footer download** - Added QR code alongside app badges
+
+## Step 20: Fine-tuning - Round 7
+
+Second detailed comparison pass, identifying spacing and content differences:
+
+1. **Hero padding** - Reduced from py-12/py-20 to py-8/py-14 (Framer shows less whitespace)
+2. **Section padding** - Reduced all sections from py-16/py-24 to py-12/py-20
+3. **Feature cards** - Removed borders, added shadow-sm and white bg (match Framer's subtle card style)
+4. **"$150" highlight** - Added gold dollar sign in earn rewards card
+5. **Extra FAQ** - Removed "How long do appointments take?" to match Framer's 5 items
+6. **"Still Have questions?"** - Fixed capitalization, left-aligned, added full contact text
+7. **Disclaimer background** - Changed from dark charcoal to white (matching Framer)
+8. **Footer download card** - Wrapped in bordered card container
+
 ## QA Summary
 
 | Round | Issues found | Fixed |
@@ -217,10 +256,21 @@ The footer SVG is too large/complex to use directly (it's the entire footer as o
 | 3 | Step progress line, missing connecting indicator | Added horizontal line between step circles |
 | 4 | Text-based logos, placeholder app buttons | Real SVG logo and badge exports from Figma |
 | 5 | Clover Health logo was text, navbar buttons wrong style | Real Clover Health SVG logo, teal pill phone, white pill schedule button |
+| 6 | 12 differences: sticky nav, button icons, heading colors, card borders, icon colors, star color, tech section, CTA buttons, FAQ icons, FAQ state, FAQ count, QR code | All 12 fixed |
+| 7 | Excess spacing, card styling, $150 text, extra FAQ, disclaimer bg, footer download layout | All 8 fixed |
+
+## Commits on the branch (continued)
+
+11. `845f2b3` - docs: update session log with QA rounds 3-4 and final status
+12. `c1f0d29` - fix: add Clover Health logo, improve navbar, add export checklist
+13. `87ab8d8` - fix: round 6 QA - match Framer design closely
+14. `8021934` - fix: round 7 QA - tighten spacing and match Framer details
 
 ## Remaining minor differences
 
 - HIPAA, SOC 2, JCAHO trust badges in footer (need individual SVG exports from Figma)
+- Custom illustration-style icons in Figma vs generic Heroicons (need individual SVG exports)
+- package.json/package-lock.json from Playwright install (not committed)
 
 ## Live URLs
 
