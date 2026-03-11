@@ -35,6 +35,8 @@ assets/
 docs/
   figma-to-code-with-claude.md   Complete guide for designers
   why-tailwind.md                CSS approach decision doc
+  figma-mcp-guide.md             Figma MCP server options and comparison
+  playwright-guide.md            Visual QA and browser automation
   session-log.md                 Step-by-step journal of the rebuild
 ```
 
@@ -43,6 +45,10 @@ docs/
 - **[Guide: Building Pages with Claude Code](docs/figma-to-code-with-claude.md)** -- The main resource. Covers why Framer exports fail, the better workflow, prompt templates, and a summary table of dos and don'ts.
 
 - **[Why Tailwind CSS](docs/why-tailwind.md)** -- Decision doc explaining why Tailwind was chosen over plain CSS for this project: fewer files, strong Claude Code compatibility, zero build step.
+
+- **[Figma MCP Guide](docs/figma-mcp-guide.md)** -- Comparison of Figma MCP server options (Framelink, Figma Official, Full API wrapper, MCP Bridge). Pros, cons, setup instructions, and when to use each.
+
+- **[Playwright Guide](docs/playwright-guide.md)** -- How to use Playwright for visual QA, responsive testing, cross-browser screenshots, interactive element testing, and more. No project setup required.
 
 - **[Session Log](docs/session-log.md)** -- Full journal of every step taken during the rebuild, from diagnosing the Framer export through Playwright visual QA. Includes before/after metrics and the asset identification table.
 
