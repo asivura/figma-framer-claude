@@ -52,6 +52,8 @@ docs/
 
 - **[Figma Export Checklist](docs/figma-export-checklist.md)** -- Exactly which assets a designer needs to export from Figma to achieve a pixel-perfect match. Lists what's done, what's missing, naming conventions, and export tips.
 
+- **[Designer QA Workflow](docs/designer-qa-workflow.md)** -- Practical advice for getting a pixel-perfect match. Covers section-by-section comparison, common differences to watch for, and asset preparation tips. Based on 8 rounds of QA on this project.
+
 - **[Session Log](docs/session-log.md)** -- Full journal of every step taken during the rebuild, from diagnosing the Framer export through Playwright visual QA. Includes before/after metrics and the asset identification table.
 
 ## Before / After

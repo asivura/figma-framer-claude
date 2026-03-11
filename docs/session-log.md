@@ -258,6 +258,7 @@ Second detailed comparison pass, identifying spacing and content differences:
 | 5 | Clover Health logo was text, navbar buttons wrong style | Real Clover Health SVG logo, teal pill phone, white pill schedule button |
 | 6 | 12 differences: sticky nav, button icons, heading colors, card borders, icon colors, star color, tech section, CTA buttons, FAQ icons, FAQ state, FAQ count, QR code | All 12 fixed |
 | 7 | Excess spacing, card styling, $150 text, extra FAQ, disclaimer bg, footer download layout | All 8 fixed |
+| 8 | Hero banner/heading/buttons, FAQ icons, card text weight, step shapes, section bgs, footer layout | All fixes below |
 
 ## Commits on the branch (continued)
 
@@ -268,6 +269,10 @@ Second detailed comparison pass, identifying spacing and content differences:
 15. `9c10abf` - docs: update session log with QA rounds 6-7 and steps 18-20
 16. `b6b4919` - chore: add package.json and package-lock.json to gitignore
 17. `bdf8c90` - chore: commit Playwright setup and add QA instructions to CLAUDE.md
+18. `03ae27a` - docs: update session log with step 21 and latest commits
+19. `7a7f431` - fix: FAQ icons show proper X when open, increase item spacing
+20. `abc14ff` - fix: hero section - match Framer banner, heading, bold text, button styles
+21. `aaee3c9` - fix: round 8 QA - section-by-section match with Framer
 
 ## Step 21: Project cleanup and contributor setup
 
@@ -278,6 +283,27 @@ Decided to commit `package.json` and `package-lock.json` (Playwright dependency)
 - Reference to the full Playwright guide in docs
 
 Also updated the PR description with a QA rounds summary table and remaining differences section.
+
+## Step 22: Section-by-section QA (Round 8)
+
+Previous QA rounds compared full-page screenshots, which missed many details. This round used Playwright to take 10 individual section screenshots at the same 1440x900 viewport for both pages, enabling much more precise comparison.
+
+### Hero fixes (pre-round 8)
+- "GET $150" banner: changed from gold pill to white bordered card with green checkmark icon
+- Heading color: changed from dark green to muted gray (`text-gray-500`)
+- Bold text: "covered at no additional cost to you" now bold
+- Phone CTA: changed from filled dark green to outlined with teal text/border
+- FAQ icons: proper X when open (two separate SVGs with group-open toggle)
+- FAQ item spacing: increased from py-4 to py-6
+
+### Round 8 section-by-section fixes
+1. **LiveHealthy cards**: removed bold from card text, changed from shadow to border styling
+2. **Step indicators**: changed from circles with connecting lines to rounded squares without lines
+3. **Trusted care section**: changed bg from cream to white, cards already white with borders
+4. **Testimonials section**: changed bg from white to cream (matching Framer's alternation)
+5. **FAQ content width**: widened from max-w-3xl to max-w-4xl
+6. **Footer layout**: restructured from 5-column to Framer's layout (2+2 link columns left, download card right)
+7. **Footer download card**: added app icon, moved Questions section inside card, centered social icons and legal links
 
 ## Remaining minor differences
 
