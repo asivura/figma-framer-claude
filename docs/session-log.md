@@ -117,7 +117,7 @@ Updated all `<img>` tags to use the renamed files. For assets that didn't exist 
 - Used text-based logos in the navbar
 - Created styled button links for App Store/Google Play
 
-## Step 12: Compare and refine
+## Step 12: Compare and refine (Round 1)
 
 Took fresh Playwright screenshots and compared against the Framer original. Identified remaining differences:
 
@@ -126,12 +126,38 @@ Took fresh Playwright screenshots and compared against the Framer original. Iden
 
 Fixed both issues in a dedicated commit.
 
+## Step 13: Add documentation for tools
+
+Created two additional guides:
+
+- `docs/figma-mcp-guide.md` -- Comparison of 4 Figma MCP server options (Framelink, Official, Full API, Bridge) with setup instructions, rate limits, and recommendations
+- `docs/playwright-guide.md` -- How to use Playwright for visual QA and 7 additional use cases (responsive testing, cross-browser, interactive elements, slow network, broken resources, PDF generation)
+
+Updated README with references to both.
+
+## Step 14: Automated Playwright QA loop (Round 2)
+
+Used Playwright to screenshot both the Framer original (`intelligent-gecko-264478.framer.app`) and our rebuild side by side, then systematically compared every section. Identified and fixed 5 differences:
+
+1. **Hero trust badges** -- Were plain text with icons. Restyled as pill-shaped badges with borders and white backgrounds to match Framer.
+2. **"Not sure about tech" section** -- Had one CTA button. Added a second dark green button for the phone number to match Framer's two-button layout.
+3. **Trusted care grid** -- Was a 4-column layout with icons above text. Changed to 2x2 grid with icons left-aligned next to text, matching Framer.
+4. **Testimonials** -- Avatars were beside names in cards. Moved avatars above names, centered layout, changed to cream background section.
+5. **Section backgrounds** -- Trusted care was cream, testimonials was white. Swapped to match Framer's alternation.
+
+## Step 15: Project housekeeping
+
+- Moved all documentation into `docs/` directory
+- Created README.md with live demo links, before/after table, and references to all guides
+- Added .gitignore for screenshots, OS files, and editor files
+- Created PR to upstream repo: https://github.com/etonev/figma-framer-claude/pull/1
+
 ## Final result
 
 | Metric | Framer export | Our rebuild |
 |---|---|---|
 | File size | 429KB | ~28KB |
-| Lines of code | 841 | ~510 |
+| Lines of code | 841 | ~520 |
 | Files | 1 monolithic HTML | 1 HTML (with external Tailwind CDN) |
 | Inline SVGs | ~105 SVG path lines | Small icons only (readable) |
 | JavaScript | Custom accordion script | None (native `<details>` element) |
@@ -145,9 +171,24 @@ Fixed both issues in a dedicated commit.
 2. `f7a0263` - feat: rebuild landing page with Tailwind CSS
 3. `6ad2ed4` - fix: rename assets to descriptive names and fix image references
 4. `cc5270c` - fix: match Figma design details
+5. `ec662f9` - docs: add session log documenting the full rebuild process
+6. `4f184b4` - docs: move documentation to docs/ and add README
+7. `13169b9` - docs: add Figma MCP and Playwright guides
+8. `9d59f5a` - fix: round 1 QA - match Framer layout more closely
+
+## Remaining minor differences
+
+These are acceptable gaps where we lack the exact assets:
+
+- Navbar uses text logos instead of Clover Health/HealthTap logo images (no separate SVGs in export)
+- Footer uses text logo instead of HealthTap logo image
+- No JCAHO accreditation badge image
+- Rewards steps lack a connecting horizontal progress line between circles
+- App store badges are styled buttons instead of official badge images
 
 ## Live URLs
 
 - **Our rebuild:** https://asivura.github.io/figma-framer-claude/page.html
 - **Original Framer export:** https://asivura.github.io/figma-framer-claude/index.html
 - **Live Framer site:** https://intelligent-gecko-264478.framer.app/
+- **PR:** https://github.com/etonev/figma-framer-claude/pull/1
