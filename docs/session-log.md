@@ -305,6 +305,51 @@ Previous QA rounds compared full-page screenshots, which missed many details. Th
 6. **Footer layout**: restructured from 5-column to Framer's layout (2+2 link columns left, download card right)
 7. **Footer download card**: added app icon, moved Questions section inside card, centered social icons and legal links
 
+## Step 23: Multi-round mobile + desktop QA (Rounds 9-11)
+
+Continued section-by-section QA comparing both desktop (1440x900) and mobile (375x812) viewports using Playwright scroll-offset screenshots.
+
+### Round 9 fixes
+1. **Trusted care bg**: restored `bg-cream` (was wrongly changed to white in round 8)
+2. **"Not sure about tech" heading**: changed to `text-gold` (was `text-dark-green`)
+3. **"Want help" card**: styled with `border-l-4 border-primary bg-cream rounded-r-xl`
+4. **Earn $150 phone button**: changed to outlined style with teal text/border
+5. **Step indicators**: moved inside cards with `bg-primary/15 text-primary rounded-lg`
+6. **FAQ icons**: plain teal `+` text when collapsed, circled X when expanded
+
+### Round 10 fixes (mobile-focused)
+1. **Hero trust badges (mobile)**: changed from stacked pills to 3-column grid with icon above text
+2. **CTA banner buttons**: phone → teal filled, schedule → white with teal text (matching Framer)
+3. **"Want help" card text**: added "Call HealthTap support:" prefix
+4. **Trusted care "Schedule" text**: kept desktop text, not mobile variant
+
+### Round 11 fixes (color audit)
+1. **Hero heading color**: changed from `text-gray-500` to `text-dark-green` (matching Framer's dark heading)
+2. **Trusted care icon backgrounds**: increased opacity from `/10` to `/20` for more visible icon backgrounds
+3. **Full color/background audit**: verified all section backgrounds and heading colors match Framer
+
+## QA Summary (updated)
+
+| Round | Issues found | Fixed |
+|---|---|---|
+| 1 | Broken images, wrong card highlight, missing avatars | Renamed assets, styled step 3, added testimonial photos |
+| 2 | Badge styling, button count, grid layout, section backgrounds, testimonial layout | Pill badges, 2-button tech section, 2x2 grid, avatar-above-name layout |
+| 3 | Step progress line, missing connecting indicator | Added horizontal line between step circles |
+| 4 | Text-based logos, placeholder app buttons | Real SVG logo and badge exports from Figma |
+| 5 | Clover Health logo was text, navbar buttons wrong style | Real Clover Health SVG logo, teal pill phone, white pill schedule button |
+| 6 | 12 differences: sticky nav, button icons, heading colors, card borders, icon colors, star color, tech section, CTA buttons, FAQ icons, FAQ state, FAQ count, QR code | All 12 fixed |
+| 7 | Excess spacing, card styling, $150 text, extra FAQ, disclaimer bg, footer download layout | All 8 fixed |
+| 8 | Hero banner/heading/buttons, FAQ icons, card text weight, step shapes, section bgs, footer layout | All fixed |
+| 9 | Trusted care bg, heading colors, card styling, step indicators, FAQ icons, button styles | All 6 fixed |
+| 10 | Mobile trust badges layout, CTA button colors, card text, schedule description | All 4 fixed |
+| 11 | Hero heading gray→dark-green, trusted care icon opacity too light | All fixed, full color audit passed |
+
+## Commits on the branch (continued, rounds 9-11)
+
+22. `c1ce2aa` - fix: round 9 QA - restore backgrounds, fix heading colors, restyle cards
+23. `3e69b62` - fix: round 10 QA - mobile trust badges layout, CTA button colors, text fixes
+24. `4fea11e` - fix: round 11 QA - hero heading color, trusted care icon opacity, revert text
+
 ## Remaining minor differences
 
 - HIPAA, SOC 2, JCAHO trust badges in footer (need individual SVG exports from Figma)
