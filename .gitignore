@@ -5,6 +5,9 @@ screenshots/
 .DS_Store
 Thumbs.db
 
+# Playwright
+test-results/
+
 # Node
 node_modules/
 
